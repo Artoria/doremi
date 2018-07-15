@@ -60,12 +60,10 @@ EOF
 ```ruby
   #more dynamic `jsx`
   Doremi.new(<<-'EOF').run
-   <seq xmlns:r="react-like">
-     <r:root>
+   <seq>
        a = <Integer>3</Integer> # method "Kernel#Integer"
        b = <Integer>5</Integer> 
        <p> a + b </p>
-     </r:root>
    </seq>
   EOF
    
