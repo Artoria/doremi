@@ -13,9 +13,8 @@ several usages:
 require './doremi.rb'
 require 'execjs'
 Doremi.new(<<-'EOF').run
-  <seq xmlns:r="react-like" xmlns:d="doremi" xmlns:js="execjs">
+  <seq xmlns:js="execjs">
      register_ns_text 'execjs', ExecJS
-     <r:root>     
        p <js:eval>
          (function(G){
            var s = 0;
@@ -25,7 +24,6 @@ Doremi.new(<<-'EOF').run
            return s;
           })(this)
       </js:eval>
-     </r:root>
   </seq>
 EOF
 ```
@@ -60,12 +58,10 @@ EOF
 ```ruby
   #more dynamic `jsx`
   Doremi.new(<<-'EOF').run
-   <seq xmlns:r="react-like">
-     <r:root>
+   <seq>
        a = <Integer>3</Integer> # method "Kernel#Integer"
        b = <Integer>5</Integer> 
        <p> a + b </p>
-     </r:root>
    </seq>
   EOF
    
